@@ -1,0 +1,10 @@
+function pickWinner() {
+  const text = document.getElementById("names").value;
+  const names = text.split('\n').filter(name => name.trim() !== '');
+  if (names.length === 0) {
+    alert("Please enter at least one name.");
+    return;
+  }
+  const winner = names[Math.floor(Math.random() * names.length)];
+  document.getElementById("winner").textContent = `🎉 Winner: ${winner} 🎉`;
+}
